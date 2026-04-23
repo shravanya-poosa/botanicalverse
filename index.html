@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BotanicalVerse | Maitreyi College</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .test {
+            list-style-image: url("tree.png");
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <ul class="main-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#inventory">Plant Database</a></li>
+        <li><a href="#analytics">Botanical Analytics</a></li>
+        <li><a href="#schedule">Schedule</a></li> 
+        <li><a href="#register">Register</a></li>
+    </ul>
+</nav>
+
+<marquee> Welcome to the BotanicalVerse: Explore the official plant inventory of Maitreyi College.</marquee>
+
+<section id="home" class="content-area">
+    <center>
+        <h1 style="color: #2e7d32;">BotanicalVerse</h1>
+        <p><strong>Official Greenery Management Portal</strong></p>
+        <img src="college_garden.jpg" alt="Botanical Garden" width="550">
+        <p><a href="https://maitreyi.ac.in/" target="_blank" style="color: #2e7d32; font-weight: bold; text-decoration: none;">Visit Maitreyi College Official Site</a></p>
+    </center>
+    <hr>
+    <h3>About the Portal</h3>
+    <p>This portal helps in maintaining campus biodiversity. Below are the specific logical modules used to process botanical data.</p>
+
+    <div class="card-container">
+        <div class="card">
+            <h4>Inventory Tracking</h4>
+            <p>Digital monitoring of campus species.</p>
+        </div>
+        <div class="card">
+            <h4>Data Analysis</h4>
+            <p>Mathematical logic for growth heights.</p>
+        </div>
+        <div class="card">
+            <h4>Admin Access</h4>
+            <p>Secure registration for gardening staff.</p>
+        </div>
+    </div>
+</section>
+
+<section id="inventory" class="content-area">
+    <h2>Active Plant Inventory</h2>
+    <ul class="test">
+        <li><strong>Snake Plant:</strong> Air-purifying, Location: Block A.</li>
+        <li><strong>Golden Pothos:</strong> Fast-growing, Location: Library.</li>
+        <li><strong>Hibiscus:</strong> Flowering, Location: Main Gate.</li>
+    </ul>
+</section>
+
+<section id="analytics" class="content-area">
+    <h2>Botanical Analytics Center</h2>
+
+    <div class="tool-section">
+        <h3>Specimen Grid Generator (Multiplication Table):</h3>
+        <input type="number" id="tableNum">
+        <button onclick="printTable()">Generate</button>
+        <div id="resTable" class="output-box"></div>
+    </div>
+
+    <div class="tool-section">
+       <h3>Height Comparison (Largest of Three):</h3>
+        <input type="number" id="h1">
+        <input type="number" id="h2">
+        <input type="number" id="h3">
+        <button onclick="findLargest()">Find Tallest</button>
+        <div id="resLargest" class="output-box"></div>
+    </div>
+
+    <div class="tool-section">
+        <h3>Biological Combination Logic (Factorial):</h3>
+        <input type="number" id="factNum">
+        <button onclick="findFactorial()">Calculate</button>
+        <div id="resFact" class="output-box"></div>
+    </div>
+
+    <div class="tool-section">
+       <h3>Batch Sample Aggregator (Sum & Average):</h3>
+        <button onclick="sumAverage()">Start</button>
+        <div id="resLoop" class="output-box"></div>
+    </div>
+</section>
+
+<section id="schedule" class="content-area">
+    <h2 style="text-align:center;">Weekly Garden Maintenance Schedule</h2>
+    <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; text-align: center; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #2e7d32; color: white;">
+                <th>Day/Activity</th>
+                <th>8:30-10:30</th>
+                <th>10:30-12:30</th>
+                <th>12:30-2:30</th>
+                <th>2:30-4:30</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>Soil Aeration</td>
+                <td>Nursery Inspection</td>
+                <td>Lunch Break</td>
+                <td>Pest Control</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>Watering (Block A)</td>
+                <td>Fertilizer Mix</td>
+                <td>Lunch Break</td>
+                <td>Staff Meeting</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td colspan="2">Major Plantation Drive (Medicinal Garden)</td>
+                <td>Lunch Break</td>
+                <td>Equipment Repair</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>Pruning Hibiscus</td>
+                <td>Snake Plant Cleaning</td>
+                <td>Lunch Break</td>
+                <td>Waste Composting</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>Watering (All Zones)</td>
+                <td>Data Entry (Analytics)</td>
+                <td>Lunch Break</td>
+                <td>Inventory Review</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="register" class="content-area">
+    <h2>Gardener Registration</h2>
+    <form onsubmit="alert('Registration Successful!'); return false;">
+        
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+
+        <label><strong>Areas of Responsibility:</strong></label>
+        <div class="checkbox-group">
+            <label><input type="checkbox"> Indoor Plants</label>
+            <label><input type="checkbox"> Outdoor Plants</label>
+            <label><input type="checkbox"> Flowering Plants</label>
+            <label><input type="checkbox"> Medicinal Plants</label>
+        </div>
+
+        <button type="submit">Register Now</button>
+    </form>
+</section>
+
+<script>
+function printTable() {
+    let n = Number(document.getElementById("tableNum").value);
+    let res = "";
+    for (let i = 1; i <= 10; i++) res += n + " x " + i + " = " + (n * i) + "<br>";
+    document.getElementById("resTable").innerHTML = res;
+}
+
+function findLargest() {
+    let a = Number(document.getElementById("h1").value);
+    let b = Number(document.getElementById("h2").value);
+    let c = Number(document.getElementById("h3").value);
+    let max = Math.max(a, b, c);
+    document.getElementById("resLargest").innerHTML = "Tallest: " + max;
+}
+
+function findFactorial() {
+    let n = Number(document.getElementById("factNum").value), f = 1;
+    for (let i = 1; i <= n; i++) f *= i;
+    document.getElementById("resFact").innerHTML = "Factorial: " + f;
+}
+
+function sumAverage() {
+    let sum = 0, count = 0;
+    while (true) {
+        let n = Number(prompt("Enter value (0 to stop):"));
+        if (n === 0 || isNaN(n)) break;
+        sum += n; count++;
+    }
+    document.getElementById("resLoop").innerHTML =
+        count > 0 ? "Sum: " + sum + " | Avg: " + (sum/count).toFixed(2) : "No data";
+}
+</script>
+
+</body>
+</html>
